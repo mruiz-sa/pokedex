@@ -7,17 +7,19 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { PokedexHeaderComponent } from './components/pokedex-header/pokedex-header.component';
 
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
+    PokedexHeaderComponent,
     PokemonListComponent,
     PokemonDetailComponent,
-    PokedexHeaderComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

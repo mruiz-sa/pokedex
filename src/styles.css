@@ -119,8 +119,8 @@ main {
     background: url(assets\images\fighting.jpg);
     background-size: 90px;
     background-position: -3px;
-    color: var(--clr-white);
-    font-weight: 600;
+    color: var(--clr-black);
+    font-weight: 800;
 }
 
 .poison {
@@ -162,7 +162,7 @@ main {
 .rock {
     background: url(assets\images\rock.jpg);
     background-size: 110px;
-    background-position: -60px;
+    background-position: -50px;
     color: var(--clr-white);
     font-weight: 600;
 }
