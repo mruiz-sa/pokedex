@@ -76,24 +76,28 @@ main {
     background: url(assets\images\normal.jpg);
     background-size: 100px;
     color: var(--clr-black);
+    font-weight: 800;
 }
 
 .fire {
     background: url(assets\images\fire.png);
     background-size: 60px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .water {
     background: url(assets\images\water.png);
     background-size: 120px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .grass {
     background: url(assets\images\grass.png);
     background-size: 100px;
     color: var(--clr-black);
+    font-weight: 800;
 }
 
 .electric {
@@ -101,12 +105,14 @@ main {
     background-size: 100px;
     background-position: -2px;
     color: var(--clr-black);
+    font-weight: 800;
 }
 
 .ice {
     background: url(assets\images\ice.jpg);
     background-size: 100px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .fighting {
@@ -114,24 +120,28 @@ main {
     background-size: 90px;
     background-position: -3px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .poison {
     background: url(assets\images\poison.jpg);
     background-size: 100px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .ground {
     background: url(assets\images\ground.jpg);
     background-size: 100px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .flying {
     background: url(assets\images\flying.jpg);
     background-size: 80px;
     color: var(--clr-black);
+    font-weight: 800;
 }
 
 .psychic {
@@ -139,12 +149,14 @@ main {
     background-size: 130px;
     color: var(--clr-white);
     background-position: -90px;
+    font-weight: 600;
 }
 
 .bug {
     background: url(assets\images\bug.jpg);
     background-size: 30px;
     color: var(--clr-black);
+    font-weight: 800;
 }
 
 .rock {
@@ -152,6 +164,7 @@ main {
     background-size: 110px;
     background-position: -60px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .ghost {
@@ -159,28 +172,39 @@ main {
     background-size: 120px;
     background-position: 30px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .dark {
     background: url(assets\images\dark.jpg);
     background-size: 100px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .dragon {
     background: url(assets\images\dragon.jpg);
     background-size: 160px;
     color: var(--clr-white);
+    font-weight: 600;
 }
 
 .steel {
     background: url(assets\images\steel.jpg);
     background-size: 800px;
     color: var(--clr-black);
+    font-weight: 800;
 }
 
 .fairy {
     background: url(assets\images\fairy.jpg);
     background-size: 120px;
     color: var(--clr-black);
+    font-weight: 800;
+}
+
+.all {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    font-weight: 600;
 }
