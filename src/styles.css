@@ -1,1 +1,186 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --clr-black: #1c1c1c;
+    --clr-grey: #dedddd;
+    --clr-white: #f7f7f7;
+
+    --type-normal: #A8A878;
+    --type-fire: #F08030;
+    --type-water: #6890F0;
+    --type-grass: #78C850;
+    --type-electric: #F8D030;
+    --type-ice: #98D8D8;
+    --type-fighting: #C03028;
+    --type-poison: #A040A0;
+    --type-ground: #E0C068;
+    --type-flying: #A890F0;
+    --type-psychic: #F85888;
+    --type-bug: #A8B820;
+    --type-rock: #B8A038;
+    --type-ghost: #705898;
+    --type-dark: #705848;
+    --type-dragon: #7038F8;
+    --type-steel: #B8B8D0;
+    --type-fairy: #e5b7bb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--clr-black);
+    font-family: 'Rubik', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--clr-grey);
+}
+
+header {
+    padding-block: 1rem;
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .5);
+}
+
+input {
+    width: 40vw;
+    padding: 10px;
+    background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    outline:none;
+    border: 4px solid #CCD1E4;
+    font-weight: 600;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+
+
+.normal {
+    background: url(assets\images\normal.jpg);
+    background-size: 100px;
+    color: var(--clr-black);
+}
+
+.fire {
+    background: url(assets\images\fire.png);
+    background-size: 60px;
+    color: var(--clr-white);
+}
+
+.water {
+    background: url(assets\images\water.png);
+    background-size: 120px;
+    color: var(--clr-white);
+}
+
+.grass {
+    background: url(assets\images\grass.png);
+    background-size: 100px;
+    color: var(--clr-black);
+}
+
+.electric {
+    background: url(assets\images\electric.jpg);
+    background-size: 100px;
+    background-position: -2px;
+    color: var(--clr-black);
+}
+
+.ice {
+    background: url(assets\images\ice.jpg);
+    background-size: 100px;
+    color: var(--clr-white);
+}
+
+.fighting {
+    background: url(assets\images\fighting.jpg);
+    background-size: 90px;
+    background-position: -3px;
+    color: var(--clr-white);
+}
+
+.poison {
+    background: url(assets\images\poison.jpg);
+    background-size: 100px;
+    color: var(--clr-white);
+}
+
+.ground {
+    background: url(assets\images\ground.jpg);
+    background-size: 100px;
+    color: var(--clr-white);
+}
+
+.flying {
+    background: url(assets\images\flying.jpg);
+    background-size: 80px;
+    color: var(--clr-black);
+}
+
+.psychic {
+    background: url(assets\images\psychic.jpg);
+    background-size: 130px;
+    color: var(--clr-white);
+    background-position: -90px;
+}
+
+.bug {
+    background: url(assets\images\bug.jpg);
+    background-size: 30px;
+    color: var(--clr-black);
+}
+
+.rock {
+    background: url(assets\images\rock.jpg);
+    background-size: 110px;
+    background-position: -60px;
+    color: var(--clr-white);
+}
+
+.ghost {
+    background: url(assets\images\ghost.png);
+    background-size: 120px;
+    background-position: 30px;
+    color: var(--clr-white);
+}
+
+.dark {
+    background: url(assets\images\dark.jpg);
+    background-size: 100px;
+    color: var(--clr-white);
+}
+
+.dragon {
+    background: url(assets\images\dragon.jpg);
+    background-size: 160px;
+    color: var(--clr-white);
+}
+
+.steel {
+    background: url(assets\images\steel.jpg);
+    background-size: 800px;
+    color: var(--clr-black);
+}
+
+.fairy {
+    background: url(assets\images\fairy.jpg);
+    background-size: 120px;
+    color: var(--clr-black);
+}
