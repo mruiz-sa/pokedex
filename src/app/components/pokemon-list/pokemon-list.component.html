@@ -4,6 +4,7 @@
       <a [routerLink]="['/pokemon', pokemon.id]">
         <img [src]="'assets/images/heartgold-soulsilver/' + pokemon.id + '.png'" alt="{{ pokemon.name }}" />
         <p>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</p>
+        <p>{{pokemon.show_id}}</p>
       </a>
     </li>
   </ul>

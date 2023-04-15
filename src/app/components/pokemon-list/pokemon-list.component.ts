@@ -10,6 +10,7 @@ import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
 })
 
 
+
 export class PokemonListComponent implements OnInit{
 	
 	pokemonList: PokemonDetails[] = [];
@@ -30,7 +31,7 @@ export class PokemonListComponent implements OnInit{
 		this.pokemonService.getPokemon(id).subscribe((response: any) => {
 		  const pokemon = new PokemonDetails();
 		  pokemon.id = response.id;
-		  console.log("el iddd es: "+pokemon.id);
+		  pokemon.show_id = this.pokemonService.getShowId(pokemon.id);
 		  pokemon.name = response.name;
 		  pokemon.weight = response.weight;
 		  pokemon.height = response.height;
@@ -66,5 +67,4 @@ export class PokemonListComponent implements OnInit{
 		  this.pokemonList[index] = pokemon;
 		});
 	  }
-	}
-
+}

@@ -1,5 +1,6 @@
 export class PokemonDetails {
     id!: number;
+    show_id!: string;
     name!: string;
     weight!: number;
     height!: number;
