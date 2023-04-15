@@ -3,11 +3,16 @@ export class PokemonDetails {
     name!: string;
     weight!: number;
     height!: number;
-    type: PokemonType;
+    types: PokemonType;
   
     constructor() {
-      this.type = {
+      this.types = {
         type1: {
+          name: '',
+          strengths: [],
+          weaknesses: []
+        },
+        type2: {
           name: '',
           strengths: [],
           weaknesses: []
@@ -16,15 +21,11 @@ export class PokemonDetails {
     }
   }
 
-export interface PokemonType {
-    type1: {
-        name: string;
-        strengths: string[];
-        weaknesses: string[];
-      };
-      type2?: {
-        name: string;
-        strengths: string[];
-        weaknesses: string[];
-      };
-}
+  export interface PokemonType {
+    [key: string]: {
+      name: string;
+      strengths: string[];
+      weaknesses: string[];
+    };
+  }
+

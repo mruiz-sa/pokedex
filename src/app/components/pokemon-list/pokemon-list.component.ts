@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
-import { PokemonDetails } from 'src/app/models/pokemon.details';
+import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
 
 
 @Component({
@@ -14,26 +14,57 @@ export class PokemonListComponent implements OnInit{
 	
 	pokemonList: PokemonDetails[] = [];
 
+	displayedColumns: string[] = ['id', 'name', 'types', 'weight', 'height'];
 	constructor(private pokemonService: PokemonService) {}
 
-	ngOnInit() {
-		this.pokemonService.getPokemonList(151, 0).subscribe(
-		  (response: any) => {
-			response.results.forEach((result: any) => {
-			  this.pokemonService.getPokemon(result.name).subscribe(
-				(pokemon: any) => {
-				  const newPokemon = new PokemonDetails();
-				  newPokemon.id = pokemon.id;
-				  newPokemon.name = pokemon.name;
-				  newPokemon.weight = pokemon.weight;
-				  newPokemon.height = pokemon.height;
-				  this.pokemonList.push(newPokemon);
-				}
-			  );
-			});
-		  }
-		);
+	ngOnInit(): void {
+		this.pokemonService.getPokemonList(151, 0).subscribe((response: any) => {
+		  response.results.forEach((result: any, index: number) => {
+			const id = result.url.split('/')[6]; // Extraer el ID de la URL
+			this.getPokemonDetails(Number(id), index);
+		  });
+		});
 	  }
+
+	getPokemonDetails(id: number, index: number) {
+		this.pokemonService.getPokemon(id).subscribe((response: any) => {
+		  const pokemon = new PokemonDetails();
+		  pokemon.id = response.id;
+		  console.log("el iddd es: "+pokemon.id);
+		  pokemon.name = response.name;
+		  pokemon.weight = response.weight;
+		  pokemon.height = response.height;
 	
-}
+		  response.types.forEach((type: any, typeIndex: number) => {
+			const typeName = type.type.name;
+			const newPokemonType: PokemonType = {
+			  type1: {
+				name: '',
+				strengths: [],
+				weaknesses: []
+			  },
+			  type2: {
+				name: '',
+				strengths: [],
+				weaknesses: []
+			  }
+			};
+			
+	
+			this.pokemonService.getTypeStrengths(typeName).subscribe((strengths: any) => {
+			  newPokemonType[`type${typeIndex + 1}`].strengths = strengths.doubleDamageTo;
+			});
+	
+			this.pokemonService.getTypeWeaknesses(typeName).subscribe((weaknesses: any) => {
+			  newPokemonType[`type${typeIndex + 1}`].weaknesses = weaknesses.halfDamageTo;
+			});
+	
+			newPokemonType[`type${typeIndex + 1}`].name = typeName;
+			pokemon.types = newPokemonType;
+		  });
+	
+		  this.pokemonList[index] = pokemon;
+		});
+	  }
+	}
 

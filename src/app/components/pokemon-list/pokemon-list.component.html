@@ -1,7 +1,10 @@
 <main>
-
-    <div id="todos">
-        <div class="pokemon-todos" id="listaPokemon"></div>
-    </div>
-
+  <ul>
+    <li *ngFor="let pokemon of pokemonList">
+      <a [routerLink]="['/pokemon', pokemon.id]">
+        <img [src]="'assets/images/heartgold-soulsilver/' + pokemon.id + '.png'" alt="{{ pokemon.name }}" />
+        <p>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</p>
+      </a>
+    </li>
+  </ul>
 </main>
