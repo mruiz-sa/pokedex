@@ -12,6 +12,7 @@ import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
 export class PokemonListComponent implements OnInit{
 	
 	pokemonList: PokemonDetails[] = [];
+	backupList : PokemonDetails[] = [];
 	filteredList: PokemonDetails[] = [];
 	displayedColumns: string[] = ['id', 'name', 'types', 'weight', 'height'];
 
@@ -48,8 +49,8 @@ export class PokemonListComponent implements OnInit{
 			else if (typeIndex === 1) {
 				newPokemonType['type2'] = {
 					name: typeName,
-          			strengths: [],
-          			weaknesses: []
+		  			strengths: [],
+		  			weaknesses: []
 				};
 			}
 
@@ -69,10 +70,21 @@ export class PokemonListComponent implements OnInit{
 		  this.pokemonList.push(pokemon);
 		  this.pokemonList.sort((a: PokemonDetails, b: PokemonDetails) => {
 			return a.id - b.id;})
+		  this.backupList = this.pokemonList;
 		});
 	}
+	
 	filterList(type: string) {
-		this.filteredList = this.pokemonList.filter(pokemon => 
+		this.filteredList = this.backupList.filter(pokemon => 
 		  pokemon.types['type1'].name === type || pokemon.types['type2']?.name === type);
+		this.updateList();
 	  }
+	
+	updateList() {
+		this.pokemonList = this.filteredList;
+	}
+
+	showAll() {
+		this.pokemonList = this.backupList;
+	}
 }

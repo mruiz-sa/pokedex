@@ -9,6 +9,7 @@
     padding-inline: 2rem;
     max-width: 1600px;
     margin: 0 auto;
+    margin-left: 275px;
 }
 
 .nav-list {
@@ -35,7 +36,8 @@
 
 .gengar {
     transform: rotate(10deg);
-    margin-left: 1100px;
+    margin-top: 10px;
+    margin-left: 1000px;
 }
 
 
