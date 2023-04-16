@@ -73,8 +73,8 @@ main {
 
 
 .normal {
-    background: url(assets\images\types\normal.jpg);
-    background-size: 100px;
+    background: url(assets\images\types\normal.png);
+    background-size: 110px;
     color: var(--clr-black);
     font-weight: 800;
 }
