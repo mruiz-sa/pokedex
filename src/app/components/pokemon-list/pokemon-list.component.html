@@ -1,11 +1,24 @@
 <main>
-  <ul>
-    <li *ngFor="let pokemon of pokemonList">
-      <a [routerLink]="['/pokemon', pokemon.id]">
-        <img [src]="'assets/images/heartgold-soulsilver/' + pokemon.id + '.png'" alt="{{ pokemon.id }}" />
-        <p>{{pokemon.name}}</p>
-      </a>
-      <p>{{pokemon.pokeId}}</p>
-    </li>
-  </ul>
+	<div class="list">
+		<div class="pokemon-list">
+			<div class="pokemon" *ngFor="let pokemon of pokemonList">
+				<p class="pokeid-back">{{pokemon.pokeId}}</p>
+				<a [routerLink]="['/pokemon', pokemon.id]">
+					<div class="pokemon-image">
+						<img [src]="'assets/images/heartgold-soulsilver/' + pokemon.id + '.png'" alt="{{ pokemon.id }}" />
+					</div>
+				</a>
+				<div class="pokemon-info">
+					<div class="name-id">
+						<p class="pokeid">{{pokemon.pokeId}}</p>
+						<h2 class="pokemon-name">{{pokemon.name}}</h2>
+					</div>
+					<div class="pokemon-types">
+						<p class="${pokemon.type1.name} type">{{pokemon.types['type1'].name}}</p>
+						<p class="${pokemon.type2.name} type" *ngIf="pokemon.types['type2']">{{pokemon.types['type2'].name}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
