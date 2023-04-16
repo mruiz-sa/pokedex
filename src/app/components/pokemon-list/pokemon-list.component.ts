@@ -12,7 +12,9 @@ import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
 export class PokemonListComponent implements OnInit{
 	
 	pokemonList: PokemonDetails[] = [];
+	filteredList: PokemonDetails[] = [];
 	displayedColumns: string[] = ['id', 'name', 'types', 'weight', 'height'];
+
 	constructor(private pokemonService: PokemonService) {}
 
 	ngOnInit(): void {
@@ -69,4 +71,8 @@ export class PokemonListComponent implements OnInit{
 			return a.id - b.id;})
 		});
 	}
+	filterList(type: string) {
+		this.filteredList = this.pokemonList.filter(pokemon => 
+		  pokemon.types['type1'].name === type || pokemon.types['type2']?.name === type);
+	  }
 }
