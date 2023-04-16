@@ -73,35 +73,35 @@ main {
 
 
 .normal {
-    background: url(assets\images\normal.jpg);
+    background: url(assets\images\types\normal.jpg);
     background-size: 100px;
     color: var(--clr-black);
     font-weight: 800;
 }
 
 .fire {
-    background: url(assets\images\fire.png);
+    background: url(assets\images\types\fire.png);
     background-size: 60px;
     color: var(--clr-white);
     font-weight: 600;
 }
 
 .water {
-    background: url(assets\images\water.png);
+    background: url(assets\images\types\water.png);
     background-size: 120px;
     color: var(--clr-white);
     font-weight: 600;
 }
 
 .grass {
-    background: url(assets\images\grass.png);
+    background: url(assets\images\types\grass.png);
     background-size: 100px;
     color: var(--clr-black);
     font-weight: 800;
 }
 
 .electric {
-    background: url(assets\images\electric.jpg);
+    background: url(assets\images\types\electric.jpg);
     background-size: 100px;
     background-position: -2px;
     color: var(--clr-black);
@@ -109,14 +109,14 @@ main {
 }
 
 .ice {
-    background: url(assets\images\ice.jpg);
+    background: url(assets\images\types\ice.jpg);
     background-size: 100px;
     color: var(--clr-white);
     font-weight: 600;
 }
 
 .fighting {
-    background: url(assets\images\fighting.jpg);
+    background: url(assets\images\types\fighting.jpg);
     background-size: 90px;
     background-position: -3px;
     color: var(--clr-black);
@@ -124,28 +124,28 @@ main {
 }
 
 .poison {
-    background: url(assets\images\poison.jpg);
+    background: url(assets\images\types\poison.jpg);
     background-size: 100px;
     color: var(--clr-white);
     font-weight: 600;
 }
 
 .ground {
-    background: url(assets\images\ground.jpg);
+    background: url(assets\images\types\ground.jpg);
     background-size: 100px;
     color: var(--clr-white);
     font-weight: 600;
 }
 
 .flying {
-    background: url(assets\images\flying.jpg);
+    background: url(assets\images\types\flying.jpg);
     background-size: 80px;
     color: var(--clr-black);
     font-weight: 800;
 }
 
 .psychic {
-    background: url(assets\images\psychic.jpg);
+    background: url(assets\images\types\psychic.jpg);
     background-size: 130px;
     color: var(--clr-white);
     background-position: -90px;
@@ -153,14 +153,14 @@ main {
 }
 
 .bug {
-    background: url(assets\images\bug.jpg);
+    background: url(assets\images\types\bug.jpg);
     background-size: 30px;
     color: var(--clr-black);
     font-weight: 800;
 }
 
 .rock {
-    background: url(assets\images\rock.jpg);
+    background: url(assets\images\types\rock.jpg);
     background-size: 110px;
     background-position: -50px;
     color: var(--clr-white);
@@ -168,7 +168,7 @@ main {
 }
 
 .ghost {
-    background: url(assets\images\ghost.png);
+    background: url(assets\images\types\ghost.png);
     background-size: 120px;
     background-position: 30px;
     color: var(--clr-white);
@@ -176,28 +176,28 @@ main {
 }
 
 .dark {
-    background: url(assets\images\dark.jpg);
+    background: url(assets\images\types\dark.jpg);
     background-size: 100px;
     color: var(--clr-white);
     font-weight: 600;
 }
 
 .dragon {
-    background: url(assets\images\dragon.jpg);
+    background: url(assets\images\types\dragon.jpg);
     background-size: 160px;
     color: var(--clr-white);
     font-weight: 600;
 }
 
 .steel {
-    background: url(assets\images\steel.jpg);
+    background: url(assets\images\types\steel.jpg);
     background-size: 800px;
     color: var(--clr-black);
     font-weight: 800;
 }
 
 .fairy {
-    background: url(assets\images\fairy.jpg);
+    background: url(assets\images\types\fairy.jpg);
     background-size: 120px;
     color: var(--clr-black);
     font-weight: 800;

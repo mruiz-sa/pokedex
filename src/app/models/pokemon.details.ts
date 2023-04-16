@@ -1,6 +1,6 @@
 export class PokemonDetails {
     id!: number;
-    show_id!: string;
+    pokeId!: string;
     name!: string;
     weight!: number;
     height!: number;
@@ -9,11 +9,6 @@ export class PokemonDetails {
     constructor() {
       this.types = {
         type1: {
-          name: '',
-          strengths: [],
-          weaknesses: []
-        },
-        type2: {
           name: '',
           strengths: [],
           weaknesses: []

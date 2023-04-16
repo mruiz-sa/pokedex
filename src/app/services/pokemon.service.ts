@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
-import { PokemonDetails, PokemonType } from '../models/pokemon.details';
 
 
 @Injectable({
@@ -12,10 +10,6 @@ export class PokemonService {
 
 	private readonly API_URL = 'https://pokeapi.co/api/v2';
 	constructor(private http: HttpClient) { }
-
-	getPokemonList(limit: number, offset: number) {
-		return this.http.get(`${this.API_URL}/pokemon?limit=${limit}&offset=${offset}`);
-	}
 
 	getPokemon(id: number) {
 		return this.http.get(`${this.API_URL}/pokemon/${id}`);
@@ -39,16 +33,16 @@ export class PokemonService {
 		);
 	}
 
-	 getShowId(id: number): string{
+	getPokeId(id: number): string{
 		
-		let show_id = id.toString();
+		let pokeId = id.toString();
 
-		if (show_id.length === 1)
-		  	show_id = '#00'+show_id;
-		  else if (show_id.length === 2)
-		  	show_id = '#0'+show_id;
-		  else
-		  	show_id = '#'+show_id;
-		return show_id;
+		if (pokeId.length === 1)
+		pokeId = '#00'+pokeId;
+		else if (pokeId.length === 2)
+		  pokeId = '#0'+pokeId;
+		else
+		  pokeId = '#'+pokeId;
+		return pokeId;
 	}
 }
