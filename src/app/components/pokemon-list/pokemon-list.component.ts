@@ -87,4 +87,20 @@ export class PokemonListComponent implements OnInit{
 	showAll() {
 		this.pokemonList = this.backupList;
 	}
+
+	searchPoke(event: any): void {
+
+		this.filteredList = this.backupList;
+		let search: string = event.target.value;
+		const searchValue = search.trim().toLowerCase(); // Usamos el operador de navegación segura
+		if (searchValue) {
+		  this.filteredList = this.backupList.filter((pokemon) =>
+		  pokemon.name.toLowerCase().includes(searchValue)
+		  );
+		  this.updateList();
+		}
+		else
+			this.updateList();
+	  }
+
 }

@@ -25,7 +25,7 @@
             <li class="nav-item"><button class="btn btn-header fairy" id="fairy" (click)="filterList('fairy')">fairy</button></li>
         </ul>
         <div>
-            <input type="text" name="PokeSearch" id="PokeSearch" placeholder="Enter ID or name">
+            <input type="text" name="PokeSearch" id="PokeSearch" placeholder="Enter ID or name" (keyup.enter)="searchPoke($event)">
         </div>
     </nav>
 </header>
