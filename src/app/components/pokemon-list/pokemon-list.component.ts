@@ -14,12 +14,14 @@ export class PokemonListComponent implements OnInit{
 	pokemonList: PokemonDetails[] = [];
 	backupList : PokemonDetails[] = [];
 	filteredList: PokemonDetails[] = [];
+	selectedPokemon: any;
 	displayedColumns: string[] = ['id', 'name', 'types', 'weight', 'height'];
+	showPopup = false;
 
 	constructor(private pokemonService: PokemonService) {}
 
 	ngOnInit(): void {
-		for (let i = 1; i <= 151; i++) {
+		for (let i = 1; i <= 9; i++) {
 			this.getPokemonDetails(i);
 		}
 	}
@@ -31,8 +33,8 @@ export class PokemonListComponent implements OnInit{
 		  pokemon.id = response.id;
 		  pokemon.pokeId = this.pokemonService.getPokeId(pokemon.id);
 		  pokemon.name = response.name.charAt(0).toUpperCase() + response.name.slice(1);
-		  pokemon.weight = response.weight;
-		  pokemon.height = response.height;
+		  pokemon.weight = (response.weight / 10);
+		  pokemon.height = (response.height / 10) * 100;
 	
 		  const newPokemonType: PokemonType = {
 			type1: {
@@ -66,7 +68,7 @@ export class PokemonListComponent implements OnInit{
 			pokemon.types = newPokemonType;
 		  });
 		  pokemon.types = newPokemonType;
-		  console.log(pokemon);
+		  //console.log(pokemon);
 		  this.pokemonList.push(pokemon);
 		  this.pokemonList.sort((a: PokemonDetails, b: PokemonDetails) => {
 			return a.id - b.id;})
@@ -103,4 +105,14 @@ export class PokemonListComponent implements OnInit{
 			this.updateList();
 	  }
 
+	openPopup(pokemon: any)
+	{
+		this.selectedPokemon = pokemon;
+		this.showPopup = true;
+		console.log(pokemon);
+	}
+
+	closePopup() {
+		this.showPopup = false;
+	}
 }

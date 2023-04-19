@@ -17,7 +17,7 @@
     --type-flying: #A890F0ec;
     --type-psychic: #f85888bb;
     --type-bug: #bbce0dec;
-    --type-rock: #575238ec;
+    --type-rock: #706f6eec;
     --type-ghost: #715898aa;
     --type-dark: #705848ec;
     --type-dragon: #f1a61cb7;
@@ -213,24 +213,28 @@ main {
     background-color: var(--type-normal);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .fire-back {
     background-color: var(--type-fire);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .water-back {
     background-color: var(--type-water);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .grass-back {
     background-color: var(--type-grass);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 
@@ -238,82 +242,96 @@ main {
     background-color: var(--type-electric);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }  
 
 .ice-back {
     background-color: var(--type-ice);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .fighting-back {
     background-color: var(--type-fighting);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .poison-back {
     background-color: var(--type-poison);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .ground-back {
     background-color: var(--type-ground);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .flying-back {
     background-color: var(--type-flying);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .psychic-back {
     background-color: var(--type-psychic);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .bug-back {
     background-color: var(--type-bug);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .rock-back {
     background-color: var(--type-rock);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .ghost-back {
     background-color: var(--type-ghost);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .dark-back {
     background-color: var(--type-dark);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .dragon-back {
     background-color: var(--type-dragon);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .steel-back {
     background-color: var(--type-steel);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }
 
 .fairy-back {
     background-color: var(--type-fairy);
     background-position: 10px -75px;
     background-image: url(assets\images\pokeball.png);
+    background-repeat: no-repeat;
 }

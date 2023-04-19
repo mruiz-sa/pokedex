@@ -35,10 +35,10 @@
 		<div class="pokemon-list">
 			<div class="pokemon {{pokemon.types['type1'].name}}-back" *ngFor="let pokemon of pokemonList">
 					<div class="pokemon-image">
-						<a [routerLink]="['/pokemon', pokemon.id]">
-							<img [src]="'assets/images/heartgold-soulsilver/' + pokemon.id + '.png'" alt="{{ pokemon.id }}" />
-						</a>
-						</div>
+						<button class="poke-sprite" (click)="openPopup(pokemon)">
+                            <img [src]="'assets/images/heartgold-soulsilver/' + pokemon.id + '.png'" alt="{{ pokemon.id }}" />
+                        </button>
+					</div>
 					<div class="pokemon-info">
 						<div class="name-id">
 							<p class="pokeid">{{pokemon.pokeId}}</p>
@@ -52,4 +52,26 @@
 			</div>
 		</div>
 	</div>
+
+
+
+    <div class="popup-container fade-in" *ngIf="showPopup">
+        <div class="top-half">
+            <div class="exit-btn">
+                <button class="close-button" (click)="closePopup()">
+                    <img class="exit-img" src="assets\images\exit.png"/>
+                </button>
+            </div>
+        </div>
+        <div class="bottom-half">
+            <div class="pop-poke-info">
+                <h2 class="pop-name">{{selectedPokemon.name}}</h2>
+                <p class="pop-pokeid">{{selectedPokemon.pokeId}}</p>
+                <p class="pop-weight">{{selectedPokemon.weight}} kg</p>
+                <p class="pop-height">{{selectedPokemon.height}} cms</p>
+                <p class="pop-type1">{{selectedPokemon.types['type1'].name}}</p>
+                <p class="pop-type2" *ngIf="selectedPokemon.types['type2']">{{selectedPokemon.types['type2'].name}}</p>
+            </div>
+        </div>
+    </div>
 </main>
