@@ -57,20 +57,30 @@
 
     <div class="popup-container" *ngIf="showPopup">
         <div class="top-half" [ngStyle]="{'background-color': getColorByType(selectedPokemon.types['type1'].name)}">
-            <div class="exit-btn">
-                <button class="close-button" (click)="closePopup()">
-                    <img class="exit-img" src="assets\images\exit.png"/>
-                </button>
-            </div>
+            <button class="exit-btn" (click)="closePopup()">
+                <img class="exit-img" src="assets\images\exit.png"/>
+            </button>
             <h2 class="pop-name">{{selectedPokemon.name}}</h2>
             <p class="pop-pokeid">{{selectedPokemon.pokeId}}</p>
-            <img [src]="'assets/images/heartgold-soulsilver/' + selectedPokemon.id + '.png'" />
+            <img class = "pop-img" [src]="'assets/images/official-artwork/' + selectedPokemon.id + '.png'" />
         </div>
         <div class="pop-poke-info">
-            <p class="pop-weight">{{selectedPokemon.weight}} kg</p>
-            <p class="pop-height">{{selectedPokemon.height}} cms</p>
-            <p class="pop-type2" *ngIf="selectedPokemon.types['type2']">{{selectedPokemon.types['type2'].name}}</p>
-            <p class="pop-type1">{{selectedPokemon.types['type1'].name}}</p>
+            <p class="pop-height">Height: {{selectedPokemon.height}} cms</p>
+            <p class="pop-weight">Weight: {{selectedPokemon.weight}} kg</p>
+            <div class="pop-type1">
+                <p class="pop-type1">Type 1: {{selectedPokemon.types['type1'].name}}</p>
+                <h3>Strengths:</h3>
+                <p class="pop-strenghts" *ngFor="let strength of selectedPokemon.types['type1'].strengths">{{ strength }}</p>
+                <h3>Weaknesses:</h3>
+                <p class="pop-weaknesses" *ngFor="let weakness of selectedPokemon.types['type1'].weaknesses">{{ weakness }}</p>
+            </div>
+            <div class="pop-type1" *ngIf="selectedPokemon.types['type2']">
+                <p class="pop-type2">Type 2: {{selectedPokemon.types['type2'].name}}</p>
+                <h3>Strengths:</h3>
+                <p class="pop-strenghts" *ngFor="let strength of selectedPokemon.types['type2'].strengths">{{ strength }}</p>
+                <h3>Weaknesses:</h3>
+                <p class="pop-weaknesses" *ngFor="let weakness of selectedPokemon.types['type2'].weaknesses">{{ weakness }}</p>
+            </div>
         </div>
     </div>
 </main>
