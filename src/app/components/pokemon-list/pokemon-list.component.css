@@ -135,13 +135,14 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 550px;
+    width: 550px;
+    height: 750px;
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.25);
     justify-content: center;
     align-items: center;
+    border: 7px solid #000000ae;;
 }
 
 .exit-btn {
@@ -158,6 +159,9 @@ button:hover {
 }
 
 .top-half {
-    background-color: aquamarine;
-    height: 275px;
+    height: 375px;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }

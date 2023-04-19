@@ -33,8 +33,8 @@ export class PokemonListComponent implements OnInit{
 		  pokemon.id = response.id;
 		  pokemon.pokeId = this.pokemonService.getPokeId(pokemon.id);
 		  pokemon.name = response.name.charAt(0).toUpperCase() + response.name.slice(1);
-		  pokemon.weight = (response.weight / 10);
-		  pokemon.height = (response.height / 10) * 100;
+		  pokemon.weight = Math.floor(response.weight / 10);
+		  pokemon.height = Math.floor((response.height / 10) * 100);
 	
 		  const newPokemonType: PokemonType = {
 			type1: {
@@ -115,4 +115,48 @@ export class PokemonListComponent implements OnInit{
 	closePopup() {
 		this.showPopup = false;
 	}
+
+	getColorByType(type: string): string {
+		switch(type) {
+		  case 'normal':
+			return '#A8A878ec';
+		  case 'fire':
+			return '#f9231897';
+		  case 'water':
+			return '#6891f099';
+		  case 'grass':
+			return '#78c850ec';
+		  case 'electric':
+			return '#f1f10ed8';
+		  case 'ice':
+			return '#98D8D8ec';
+		  case 'fighting':
+			return '#f08030bb';
+		  case 'poison':
+			return '#a14fa193';
+		  case 'ground':
+			return '#967c33ec';
+		  case 'flying':
+			return '#A890F0ec';
+		  case 'psychic':
+			return '#f85888bb';
+		  case 'bug':
+			return '#bbce0dec';
+		  case 'rock':
+			return '#706f6eec';
+		  case 'ghost':
+			return '#715898aa';
+		  case 'dark':
+			return '#705848ec';
+		  case 'dragon':
+			return '#f1a61cb7';
+		  case 'steel':
+			return '#B8B8D0ec';
+		  case 'fairy':
+			return '#e5b7bbec';
+		  default:
+			return '#ffffff';
+		}
+	}
+	  
 }
