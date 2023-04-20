@@ -20,7 +20,7 @@ export class PokemonListComponent implements OnInit{
 	constructor(private pokemonService: PokemonService) {}
 
 	ngOnInit(): void {
-		for (let i = 1; i <= 9; i++) {
+		for (let i = 1; i <= 151; i++) {
 			this.getPokemonDetails(i);
 		}
 	}
@@ -108,7 +108,6 @@ export class PokemonListComponent implements OnInit{
 	{
 		this.selectedPokemon = pokemon;
 		this.showPopup = true;
-		console.log(pokemon);
 	}
 
 	closePopup() {
@@ -157,5 +156,4 @@ export class PokemonListComponent implements OnInit{
 			return '#ffffff';
 		}
 	}
-	  
 }
