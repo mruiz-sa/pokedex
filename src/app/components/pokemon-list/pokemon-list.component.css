@@ -183,6 +183,12 @@ button:hover {
 .pop-poke-info {
     display: flex;
     gap: 15px;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.pop-stren-title {
+    margin-top: 8px;
 }
 
 .pop-pokeid {
@@ -196,27 +202,42 @@ button:hover {
 
 .pop-types {
     position: absolute;
-    left: 165px;
+    left: 25px;
     top: 230px;
     gap: 1rem;
     display: flex;
-    flex-direction: column-reverse;
+    flex-wrap: wrap;
 }
 
 p {
     text-align: center;
+    width: 85px;
 }
 
 .pop-height {
     position: absolute;
     left: 25px;
-    top: 240px;
+    top: 300px;
     font-weight: 600;
 }
 
 .pop-weight {
     position: absolute;
     left: 25px;
-    top: 270px;
+    top: 330px;
     font-weight: 600;
+}
+
+.pop-stren{
+    width: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.pop-weak{
+    width: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }

@@ -2,7 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
 
-
 @Component({
 	selector: 'app-pokemon-list',
 	templateUrl: './pokemon-list.component.html',

@@ -67,19 +67,23 @@
                 <p class="btn-type {{selectedPokemon.types['type2'].name}}" *ngIf="selectedPokemon.types['type2']">{{selectedPokemon.types['type2'].name}}</p>
             </div>
             <img class = "pop-img" [src]="'assets/images/official-artwork/' + selectedPokemon.id + '.png'" />
-            <p class="pop-height">Height: {{selectedPokemon.height}} cms</p>
-            <p class="pop-weight">Weight: {{selectedPokemon.weight}} kg</p>
+            <a class="pop-height">Height: {{selectedPokemon.height}} cms</a>
+            <a class="pop-weight">Weight: {{selectedPokemon.weight}} kg</a>
         </div>
         <div class="pop-poke-info">
             <h3 class="pop-stren-title">Strengths:</h3>
             <div class="pop-stren">
-                <div><p *ngFor="let strength of selectedPokemon.types['type1'].strengths" class="btn-type {{ strength }}">{{ strength }}</p></div>
-                <div *ngIf="selectedPokemon.types['type2']"><p *ngFor="let strength of selectedPokemon.types['type2'].strengths" class="btn-type {{ strength }}">{{ strength }}</p></div>
+                <p *ngFor="let strength of selectedPokemon.types['type1'].strengths" class="btn-type {{ strength }}">{{ strength }}</p>
+                <ng-container *ngIf="selectedPokemon.types['type2']">
+                    <p *ngFor="let strength of selectedPokemon.types['type2'].strengths" class="btn-type {{ strength }}">{{ strength }}</p>
+                </ng-container>
             </div>
             <h3 class="pop-weak-title">Weaknesses:</h3>
             <div class="pop-weak">
-                <div><p *ngFor="let weakness of selectedPokemon.types['type1'].weaknesses" class="btn-type {{ weakness }}">{{ weakness }}</p></div>
-                <div *ngIf="selectedPokemon.types['type2']"><p *ngFor="let weakness of selectedPokemon.types['type2'].weaknesses" class="btn-type {{ weakness }}">{{ weakness }}</p></div>
+                <p *ngFor="let weakness of selectedPokemon.types['type1'].weaknesses" class="btn-type {{ weakness }}">{{ weakness }}</p>
+                <ng-container *ngIf="selectedPokemon.types['type2']">
+                    <p *ngFor="let weakness of selectedPokemon.types['type2'].weaknesses" class="btn-type {{ weakness }}">{{ weakness }}</p>
+                </ng-container>
             </div>
         </div>
     </div>
