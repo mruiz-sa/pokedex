@@ -71,13 +71,13 @@
             <p class="pop-weight">Weight: {{selectedPokemon.weight}} kg</p>
         </div>
         <div class="pop-poke-info">
+            <h3 class="pop-stren-title">Strengths:</h3>
             <div class="pop-stren">
-                <h3 class="pop-stren-title">Strengths:</h3>
                 <div><p *ngFor="let strength of selectedPokemon.types['type1'].strengths" class="btn-type {{ strength }}">{{ strength }}</p></div>
                 <div *ngIf="selectedPokemon.types['type2']"><p *ngFor="let strength of selectedPokemon.types['type2'].strengths" class="btn-type {{ strength }}">{{ strength }}</p></div>
             </div>
+            <h3 class="pop-weak-title">Weaknesses:</h3>
             <div class="pop-weak">
-                <h3 class="pop-weak-title">Weaknesses:</h3>
                 <div><p *ngFor="let weakness of selectedPokemon.types['type1'].weaknesses" class="btn-type {{ weakness }}">{{ weakness }}</p></div>
                 <div *ngIf="selectedPokemon.types['type2']"><p *ngFor="let weakness of selectedPokemon.types['type2'].weaknesses" class="btn-type {{ weakness }}">{{ weakness }}</p></div>
             </div>
