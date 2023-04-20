@@ -20,7 +20,7 @@ export class PokemonListComponent implements OnInit{
 	constructor(private pokemonService: PokemonService) {}
 
 	ngOnInit(): void {
-		for (let i = 1; i <= 151; i++) {
+		for (let i = 1; i <= 6; i++) {
 			this.getPokemonDetails(i);
 		}
 	}
