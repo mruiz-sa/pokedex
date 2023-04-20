@@ -116,7 +116,6 @@
     border-radius: 100vmax;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
     text-transform: uppercase;
-    cursor: pointer;
 }
 
 button {
@@ -159,8 +158,6 @@ button:hover {
     height: 375px;
     border-top-left-radius: .5rem;
     border-top-right-radius: .5rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,19 +165,58 @@ button:hover {
 
 .pop-img {
     position: absolute;
-    top: 90px;
-    left: 240px;
+    top: 100px;
+    left: 270px;
     max-width: 50%;
 }
 
 .pop-name {
     position: absolute;
-    top: 50px;
+    top: 25px;
     text-transform: uppercase;
     font-size: 2.25em;
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.306);
 }
 
 .pop-poke-info {
     display: flex;
     gap: 15px;
+}
+
+.pop-pokeid {
+    font-size: 3.5rem;
+    font-weight: 800;
+    position: absolute;
+    left: 25px;
+    top: 130px;
+    color:rgba(0, 0, 0, 0.306)
+}
+
+.pop-types {
+    position: absolute;
+    left: 165px;
+    top: 230px;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+p {
+    text-align: center;
+}
+
+.pop-height {
+    position: absolute;
+    left: 25px;
+    top: 240px;
+    font-weight: 600;
+}
+
+.pop-weight {
+    position: absolute;
+    left: 25px;
+    top: 270px;
+    font-weight: 600;
 }
