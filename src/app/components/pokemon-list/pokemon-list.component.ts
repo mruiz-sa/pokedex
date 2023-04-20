@@ -12,15 +12,16 @@ export class PokemonListComponent implements OnInit{
 	
 	pokemonList: PokemonDetails[] = [];
 	backupList : PokemonDetails[] = [];
-	filteredList: PokemonDetails[] = [];
 	selectedPokemon: any;
 	displayedColumns: string[] = ['id', 'name', 'types', 'weight', 'height'];
 	showPopup = false;
+	currentPage: number = 1;
+	itemsPerPage: number = 18;
 
 	constructor(private pokemonService: PokemonService) {}
 
 	ngOnInit(): void {
-		for (let i = 1; i <= 6; i++) {
+		for (let i = 1; i <= 151; i++) {
 			this.getPokemonDetails(i);
 		}
 	}
@@ -76,33 +77,26 @@ export class PokemonListComponent implements OnInit{
 	}
 	
 	filterList(type: string) {
-		this.filteredList = this.backupList.filter(pokemon => 
+		this.pokemonList = this.backupList.filter(pokemon => 
 		  pokemon.types['type1'].name === type || pokemon.types['type2']?.name === type);
-		this.updateList();
-	  }
-	
-	updateList() {
-		this.pokemonList = this.filteredList;
+		this.currentPage = 1;
 	}
 
 	showAll() {
 		this.pokemonList = this.backupList;
+		this.currentPage = 1;
 	}
 
 	searchPoke(event: any): void {
 
-		this.filteredList = this.backupList;
+		this.pokemonList = this.backupList;
 		let search: string = event.target.value;
-		const searchValue = search.trim().toLowerCase(); // Usamos el operador de navegación segura
+		const searchValue = search.trim().toLowerCase();
 		if (searchValue) {
-		  this.filteredList = this.backupList.filter((pokemon) =>
-		  pokemon.name.toLowerCase().includes(searchValue)
-		  );
-		  this.updateList();
+		  this.pokemonList = this.backupList.filter((pokemon) =>
+		  pokemon.name.toLowerCase().includes(searchValue));
 		}
-		else
-			this.updateList();
-	  }
+	}
 
 	openPopup(pokemon: any)
 	{
