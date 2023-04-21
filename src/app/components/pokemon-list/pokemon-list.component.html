@@ -1,7 +1,7 @@
 <header>
     <nav class="nav">
         <div class="header-imgs">
-            <img src="assets\images\logo.png" width="200" alt="Logo Pokedex">
+            <button class="logo-link" (click)="showAll()"><img src="assets\images\logo.png" width="200" alt="Logo Pokedex"></button>
             <img class="gengar" src="assets\images\gengar.png" width="70" alt="Gengar">
         </div>
         <ul class="nav-list">
@@ -33,7 +33,7 @@
 
 <main>
 	<div class="list">
-        <pagination-controls class="pagination" (pageChange)="currentPage = $event"></pagination-controls>
+        <pagination-controls class="pagination1" (pageChange)="currentPage = $event"></pagination-controls>
 		<div class="pokemon-list">
 			<div class="pokemon {{pokemon.types['type1'].name}}-back" *ngFor="let pokemon of pokemonList | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
 					<div class="pokemon-image">
@@ -53,12 +53,14 @@
 					</div>
 			</div>
 		</div>
+        <pagination-controls class="pagination2" (pageChange)="currentPage = $event"></pagination-controls>
 	</div>
 
 
 
     <div class="popup-container" *ngIf="showPopup">
         <div class="top-half" [ngStyle]="{'background-color': getColorByType(selectedPokemon.types['type1'].name)}">
+            <img class="pokeball-background" src="assets\images\pokeball.png"/>
             <button class="exit-btn" (click)="closePopup()">
                 <img class="exit-img" src="assets\images\exit.png"/>
             </button>
