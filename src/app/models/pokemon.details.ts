@@ -5,6 +5,7 @@ export class PokemonDetails {
     weight!: number;
     height!: number;
     types: PokemonType;
+    evolutionUrl!: any;
   
     constructor() {
       this.types = {

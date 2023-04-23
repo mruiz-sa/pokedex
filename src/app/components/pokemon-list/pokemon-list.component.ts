@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-pokemon-list',
@@ -21,7 +22,7 @@ export class PokemonListComponent implements OnInit{
 	constructor(private pokemonService: PokemonService) {}
 
 	ngOnInit(): void {
-		for (let i = 1; i <= 251; i++) {
+		for (let i = 1; i <= 6; i++) {
 			this.getPokemonDetails(i);
 		}
 	}
@@ -29,22 +30,26 @@ export class PokemonListComponent implements OnInit{
 	getPokemonDetails(id: number) {
 
 		this.pokemonService.getPokemon(id).subscribe((response: any) => {
-		  const pokemon = new PokemonDetails();
-		  pokemon.id = response.id;
-		  pokemon.pokeId = this.pokemonService.getPokeId(pokemon.id);
-		  pokemon.name = response.name.charAt(0).toUpperCase() + response.name.slice(1);
-		  pokemon.weight = Math.floor(response.weight / 10);
-		  pokemon.height = Math.floor((response.height / 10) * 100);
+			const pokemon = new PokemonDetails();
+			pokemon.id = response.id;
+			pokemon.pokeId = this.pokemonService.getPokeId(pokemon.id);
+			pokemon.name = response.name.charAt(0).toUpperCase() + response.name.slice(1);
+			pokemon.weight = Math.floor(response.weight / 10);
+			pokemon.height = Math.floor((response.height / 10) * 100);
+
+			this.pokemonService.getEvolutionUrl(pokemon.id).subscribe((url: string) => {
+				pokemon.evolutionUrl = url;
+			});
 	
-		  const newPokemonType: PokemonType = {
-			type1: {
-			  name: '',
-			  strengths: [],
-			  weaknesses: []
-			}
-		  };
-		  response.types.forEach((type: any, typeIndex: number) => {
-			const typeName = type.type.name;
+			const newPokemonType: PokemonType = {
+				type1: {
+			  	name: '',
+			  	strengths: [],
+			  	weaknesses: []
+				}
+		  	};
+		  	response.types.forEach((type: any, typeIndex: number) => {
+				const typeName = type.type.name;
 			
 			if (typeIndex === 0) { // si es el primer tipo, actualizar type1
 				newPokemonType['type1'].name = typeName;}
@@ -68,7 +73,7 @@ export class PokemonListComponent implements OnInit{
 			pokemon.types = newPokemonType;
 		  });
 		  pokemon.types = newPokemonType;
-		  //console.log(pokemon);
+		  console.log(pokemon);
 		  this.pokemonList.push(pokemon);
 		  this.pokemonList.sort((a: PokemonDetails, b: PokemonDetails) => {
 			return a.id - b.id;})
@@ -150,4 +155,6 @@ export class PokemonListComponent implements OnInit{
 			return '#ffffff';
 		}
 	}
+	
+	  
 }
