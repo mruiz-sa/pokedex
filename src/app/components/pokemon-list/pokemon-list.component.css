@@ -37,6 +37,9 @@
     margin-left: 1000px;
 }
 
+.header-imgs {
+    display: flex;
+}
 
 /* ===========BODY=========== */
 
