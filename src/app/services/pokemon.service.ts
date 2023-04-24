@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
@@ -54,6 +53,16 @@ export class PokemonService {
 			return url;
 		  })
 		);
+	}
+
+	getBaseEvolution(url: string) {
+		console.log(url);
+		return this.http.get(url).pipe(
+			map((response: any) => {
+				const baseEvolution = response.chain.species.name;
+				return baseEvolution;
+			})
+		)
 	}
 	  
 }

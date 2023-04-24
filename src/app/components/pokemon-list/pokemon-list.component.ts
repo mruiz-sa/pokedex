@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
-import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-pokemon-list',
@@ -23,12 +23,18 @@ export class PokemonListComponent implements OnInit{
 
 	ngOnInit(): void {
 		for (let i = 1; i <= 6; i++) {
-			this.getPokemonDetails(i);
+			this.getPokemonDetails(i).subscribe((pokemon) => {
+			  this.pokemonList.push(pokemon);
+			});
 		}
+		this.pokemonList.sort((a: PokemonDetails, b: PokemonDetails) => {
+		  return a.id - b.id;
+		});
+		this.backupList = this.pokemonList;
 	}
 
-	getPokemonDetails(id: number) {
-
+	getPokemonDetails(id: number): Observable<PokemonDetails> {
+		return new Observable<PokemonDetails>((observer) => {
 		this.pokemonService.getPokemon(id).subscribe((response: any) => {
 			const pokemon = new PokemonDetails();
 			pokemon.id = response.id;
@@ -73,12 +79,11 @@ export class PokemonListComponent implements OnInit{
 			pokemon.types = newPokemonType;
 		  });
 		  pokemon.types = newPokemonType;
-		  console.log(pokemon);
 		  this.pokemonList.push(pokemon);
 		  this.pokemonList.sort((a: PokemonDetails, b: PokemonDetails) => {
 			return a.id - b.id;})
 		  this.backupList = this.pokemonList;
-		});
+		});})
 	}
 	
 	filterList(type: string) {

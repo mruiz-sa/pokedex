@@ -6,6 +6,7 @@ export class PokemonDetails {
     height!: number;
     types: PokemonType;
     evolutionUrl!: any;
+    evolutions: Evolutions;
   
     constructor() {
       this.types = {
@@ -15,6 +16,10 @@ export class PokemonDetails {
           weaknesses: []
         }
       };
+      this.evolutions = {
+        base: '',
+        next: []
+      }
     }
   }
 
@@ -26,3 +31,7 @@ export class PokemonDetails {
     };
   }
 
+  export interface Evolutions {
+    base: string;
+    next: string[];
+  }
