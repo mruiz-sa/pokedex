@@ -23,18 +23,12 @@ export class PokemonListComponent implements OnInit{
 
 	ngOnInit(): void {
 		for (let i = 1; i <= 6; i++) {
-			this.getPokemonDetails(i).subscribe((pokemon) => {
-			  this.pokemonList.push(pokemon);
-			});
+			this.getPokemonDetails(i)
 		}
-		this.pokemonList.sort((a: PokemonDetails, b: PokemonDetails) => {
-		  return a.id - b.id;
-		});
 		this.backupList = this.pokemonList;
 	}
 
-	getPokemonDetails(id: number): Observable<PokemonDetails> {
-		return new Observable<PokemonDetails>((observer) => {
+	getPokemonDetails(id: number) {
 		this.pokemonService.getPokemon(id).subscribe((response: any) => {
 			const pokemon = new PokemonDetails();
 			pokemon.id = response.id;
@@ -83,7 +77,7 @@ export class PokemonListComponent implements OnInit{
 		  this.pokemonList.sort((a: PokemonDetails, b: PokemonDetails) => {
 			return a.id - b.id;})
 		  this.backupList = this.pokemonList;
-		});})
+		});
 	}
 	
 	filterList(type: string) {
