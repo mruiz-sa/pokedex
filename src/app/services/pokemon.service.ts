@@ -27,8 +27,8 @@ export class PokemonService {
 	getTypeWeaknesses(typeName: string) {
 		return this.http.get(`${this.API_URL}/type/${typeName}`).pipe(
 			map((response: any) => {
-				const halfDamageTo = response.damage_relations.half_damage_to.map((type: any) => type.name);
-				return { halfDamageTo };
+				const doubleDamageFrom = response.damage_relations.double_damage_from.map((type: any) => type.name);
+				return { doubleDamageFrom };
 			})
 		);
 	}

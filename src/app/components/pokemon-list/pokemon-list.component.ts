@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { PokemonDetails, PokemonType } from 'src/app/models/pokemon.details';
-import { Observable } from 'rxjs';
+
 
 @Component({
 	selector: 'app-pokemon-list',
@@ -66,7 +66,7 @@ export class PokemonListComponent implements OnInit{
 			});
 	
 			this.pokemonService.getTypeWeaknesses(typeName).subscribe((weaknesses: any) => {
-			  newPokemonType[`type${typeIndex + 1}`].weaknesses = weaknesses.halfDamageTo;
+			  newPokemonType[`type${typeIndex + 1}`].weaknesses = weaknesses.doubleDamageFrom;
 			});
 	
 			newPokemonType[`type${typeIndex + 1}`].name = typeName;
@@ -89,6 +89,10 @@ export class PokemonListComponent implements OnInit{
 	showAll() {
 		this.pokemonList = this.backupList;
 		this.currentPage = 1;
+	}
+
+	refresh() {
+		location.reload();
 	}
 
 	searchPoke(event: any): void {
@@ -154,6 +158,4 @@ export class PokemonListComponent implements OnInit{
 			return '#ffffff';
 		}
 	}
-	
-	  
 }
