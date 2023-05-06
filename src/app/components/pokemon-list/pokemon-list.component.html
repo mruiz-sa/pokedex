@@ -61,7 +61,6 @@
 
     <div class="popup-container" *ngIf="showPopup">
         <div class="top-half" [ngStyle]="{'background-color': getColorByType(selectedPokemon.types['type1'].name)}">
-            <img class="pokeball-background" src="assets\images\pokeball.png"/>
             <button class="exit-btn" (click)="closePopup()">
                 <img class="exit-img" src="assets\images\exit.png"/>
             </button>
@@ -72,10 +71,13 @@
                 <p class="btn-type {{selectedPokemon.types['type2'].name}}" *ngIf="selectedPokemon.types['type2']">{{selectedPokemon.types['type2'].name}}</p>
             </div>
             <img class = "pop-img" [src]="'assets/images/official-artwork/' + selectedPokemon.id + '.png'" />
-            <a class="pop-height">Height: {{selectedPokemon.height}} cms</a>
-            <a class="pop-weight">Weight: {{selectedPokemon.weight}} kg</a>
+            <div class="poke-stats">
+                <a class="pop-height">Height: {{selectedPokemon.height}} cms</a>
+                <a class="pop-weight">Weight: {{selectedPokemon.weight}} kg</a>
+            </div>
         </div>
         <div class="bottom-half">
+            <img class="pokeball-background" src="assets\images\pokeball.png"/>
             <div class="pop-poke-info">
                 <div class="pop-stren">
                     <h3 class="pop-stren-weak-title">{{selectedPokemon.types['type1'].name}} Strengths:</h3>
