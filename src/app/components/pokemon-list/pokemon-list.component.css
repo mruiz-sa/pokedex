@@ -30,16 +30,18 @@
     box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
 }
 
-.gengar {
-    transform: rotate(10deg);
-    margin-top: 1rem;
-    margin-left: 70rem;
-}
-
 .header-imgs {
-    display: flex;
+    margin-top: 2rem;
 }
 
+.gengar1 {
+    transform: rotate(305deg);
+}
+
+.gengar2 {
+    margin-left: .5rem;
+    transform: rotate(15deg);
+}
 
 /* ===========BODY=========== */
 
