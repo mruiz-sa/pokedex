@@ -1,0 +1,2 @@
+Make changes on Master an then run:
+ng deploy --base-href=https://mruiz-sa.github.io/pokedex/
